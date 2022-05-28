@@ -20,17 +20,21 @@
     var CONFIG = {"hostname":"caohanwu.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="title: ‘:2022-:05-:26-:playwright+pyecharts爬虫’date: 2022-05-26 16:19:44tags: 前言           Awesome-pyecharts                          .box {  };                                     var chart_3051de32e">
+  <meta name="description" content="前言使用playwright对知轩藏书网站进行爬取，爬取书籍的书名、作者、大小、类型和评价信息，数据清洗和整理后，使用pyecharts进行可视化输出 playwright爬虫playwright是微软官方自动化测试库官网：1代码思路：1.playwright获取网页经浏览器渲染后的代码2.正则表达式筛选想要的信息3.pandas定位存储数据技巧：1.ping网站，获取网站的ip，修改hosts文">
 <meta property="og:type" content="article">
-<meta property="og:title" content="caohanwu的个人博客">
+<meta property="og:title" content=":2022-:05-:26-:playwright+pyecharts爬虫">
 <meta property="og:url" content="http://caohanwu.github.io/2022/05/26/2022-05-26-playwright-pyecharts%E7%88%AC%E8%99%AB-1/index.html">
 <meta property="og:site_name" content="caohanwu的个人博客">
-<meta property="og:description" content="title: ‘:2022-:05-:26-:playwright+pyecharts爬虫’date: 2022-05-26 16:19:44tags: 前言           Awesome-pyecharts                          .box {  };                                     var chart_3051de32e">
+<meta property="og:description" content="前言使用playwright对知轩藏书网站进行爬取，爬取书籍的书名、作者、大小、类型和评价信息，数据清洗和整理后，使用pyecharts进行可视化输出 playwright爬虫playwright是微软官方自动化测试库官网：1代码思路：1.playwright获取网页经浏览器渲染后的代码2.正则表达式筛选想要的信息3.pandas定位存储数据技巧：1.ping网站，获取网站的ip，修改hosts文">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-05-26T08:19:44.896Z">
-<meta property="article:modified_time" content="2022-05-26T11:01:17.661Z">
+<meta property="og:image" content="http://caohanwu.github.io/2022-05-26-playwright-pyecharts%E7%88%AC%E8%99%AB-1/1.png">
+<meta property="og:image" content="http://caohanwu.github.io/2022-05-26-playwright-pyecharts%E7%88%AC%E8%99%AB-1/2.png">
+<meta property="article:published_time" content="2022-05-26T08:19:44.000Z">
+<meta property="article:modified_time" content="2022-05-28T04:50:54.718Z">
 <meta property="article:author" content="Caohanwu">
+<meta property="article:tag" content="数据分析">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://caohanwu.github.io/2022-05-26-playwright-pyecharts%E7%88%AC%E8%99%AB-1/1.png">
 
 <link rel="canonical" href="http://caohanwu.github.io/2022/05/26/2022-05-26-playwright-pyecharts%E7%88%AC%E8%99%AB-1/">
 
@@ -45,7 +49,7 @@
   };
 </script>
 
-  <title> | caohanwu的个人博客</title>
+  <title>:2022-:05-:26-:playwright+pyecharts爬虫 | caohanwu的个人博客</title>
   
 
 
@@ -163,7 +167,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
+          :2022-:05-:26-:playwright+pyecharts爬虫
         </h1>
 
         <div class="post-meta">
@@ -172,10 +176,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-05-26 16:19:44 / 修改时间：19:01:17" itemprop="dateCreated datePublished" datetime="2022-05-26T16:19:44+08:00">2022-05-26</time>
+              <time title="创建时间：2022-05-26 16:19:44" itemprop="dateCreated datePublished" datetime="2022-05-26T16:19:44+08:00">2022-05-26</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-05-28 12:50:54" itemprop="dateModified" datetime="2022-05-28T12:50:54+08:00">2022-05-28</time>
+              </span>
 
           
 
@@ -188,9 +198,1651 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <hr>
-<p>title: ‘:2022-:05-:26-:playwright+pyecharts爬虫’<br>date: 2022-05-26 16:19:44<br>tags:</p>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><html>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>使用playwright对知轩藏书网站进行爬取，爬取书籍的书名、作者、大小、类型和评价信息，数据清洗和整理后，使用pyecharts进行可视化输出</p>
+<h1 id="playwright爬虫"><a href="#playwright爬虫" class="headerlink" title="playwright爬虫"></a>playwright爬虫</h1><p>playwright是微软官方自动化测试库<br>官网：<a target="_blank" rel="noopener" href="https://playwright.dev/python/docs/intro">1</a><br><a target="_blank" rel="noopener" href="https://playwright.dev/python/docs/intro"></a><br>代码思路：<br>1.playwright获取网页经浏览器渲染后的代码<br>2.正则表达式筛选想要的信息<br>3.pandas定位存储数据<br>技巧：<br>1.ping网站，获取网站的ip，修改hosts文件</p>
+<figure class="highlight plaintext"><figcaption><span>asyncio     #playwright异步爬取</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line">import pandas as pd   #pandas库</span><br><span class="line">from playwright.async_api import async_playwright,TimeoutError </span><br><span class="line">#playwright的api调取和超时错误</span><br><span class="line">import time   #记录时间</span><br><span class="line">import re   #正则表达式</span><br><span class="line">import os   </span><br><span class="line">xiaoshuo=pd.DataFrame(&#123;&#x27;书名&#x27;:&#123;&#125;,&#x27;作者&#x27;:&#123;&#125;,&#x27;类型&#x27;:&#123;&#125;,&#x27;大小&#x27;:&#123;&#125;,</span><br><span class="line">                       &#x27;仙草&#x27;:&#123;&#125;,&#x27;粮草&#x27;:&#123;&#125;,&#x27;干草&#x27;:&#123;&#125;,&#x27;枯草&#x27;:&#123;&#125;,&#x27;毒草&#x27;:&#123;&#125;&#125;)    </span><br><span class="line">#创建DataFrame信息</span><br><span class="line">link_false=pd.DataFrame(&#123;&#x27;错误链接&#x27;:&#123;&#125;&#125;)      #记录超时链接或者是其他错误</span><br><span class="line">start = time.perf_counter()    #记录开始时间</span><br><span class="line">async def main():                      </span><br><span class="line">    async with async_playwright() as p:</span><br><span class="line">        browser = await p.webkit.launch()       </span><br><span class="line">#playwright的三款浏览器最好选取webkit——轻量化快捷</span><br><span class="line">#launch内可加入proxy=&quot;&lt;ip&gt;:&lt;port&gt;&quot;全局代理代理</span><br><span class="line">        page = await browser.new_page()       #生成一个新的页面</span><br><span class="line">        for i in range(1,14000):    </span><br><span class="line">#循环到网站页数最大的页面，推荐两千组爬取一次，多次爬取</span><br><span class="line">            link = &quot;http://zxcs.me/post/&quot;+str(i)   #页面访问链接</span><br><span class="line">            try:                                  </span><br><span class="line">#网站访问时可能会超时，还有其他一些诸如内存错误，访问错误等</span><br><span class="line">                await page.goto(link,timeout=10000)         </span><br><span class="line">#访问链接,加入proxy可进行部分代理,timeout默认时间是30S，设置10s加快速度，上面时间单位是毫#秒</span><br><span class="line">                a = await page.content()          </span><br><span class="line">#获取浏览器渲染后的网站页面信息，小说评分信息由js生成，单独查看网站源码没有评分数据</span><br><span class="line">                print(&quot;获取页面成功，地址是&#123;&#125;&quot;.format(i))</span><br><span class="line">            except TimeoutError:            #playwright默认超时30s，超时会报错</span><br><span class="line">                link_false.loc[i, &#x27;错误链接&#x27;] = link       </span><br><span class="line"> #将超时的链接加入link_false的DataFrame</span><br><span class="line">                continue          #跳过此次循环</span><br><span class="line">            except BaseException:     #其他错误直接结束循环</span><br><span class="line">                break</span><br><span class="line">            names = re.search(r&#x27;(?&lt;=《).+(?=》)&#x27;,a)    </span><br><span class="line">#正则表达式查询名字，re.search仅查询一个匹配信息就返回数据</span><br><span class="line">            if names == None:  </span><br><span class="line">            #部分小说页面链接没有小说显示为空，查不到小说名字直接跳过循环</span><br><span class="line">                continue</span><br><span class="line">            else:</span><br><span class="line">                xiaoshuo.loc[i,&#x27;书名&#x27;] = names.group()     </span><br><span class="line">                #赋值给xiaoshuoDataFrame</span><br><span class="line">                author = re.search(r&#x27;(?&lt;=作者：).+(?= -)&#x27;, a)</span><br><span class="line">                if author == None:</span><br><span class="line">                    link_false.loc[i,&#x27;错误链接&#x27;]=link        </span><br><span class="line">#将超时的链接加入link_false的DataFrame</span><br><span class="line">                else:</span><br><span class="line">                    xiaoshuo.loc[i,&#x27;作者&#x27;] = author.group()</span><br><span class="line">                    type = re.search(r&#x27;(?&lt;=sort/).+(?=&lt;\/a&gt;\n	)&#x27;,a)     #小说类型</span><br><span class="line">                    if type == None:</span><br><span class="line">                        link_false.loc[i,&#x27;错误链接&#x27;]=link</span><br><span class="line">                    else:</span><br><span class="line">                        xiaoshuo.loc[i,&#x27;类型&#x27;] = type.group()</span><br><span class="line">                        size = re.search(r&#x27;(?&lt;=大小：).+(?=&lt;/span&gt;)&#x27;,a)</span><br><span class="line">                        if size == None:    #小说大小</span><br><span class="line">                            link_false.loc[i,&#x27;错误链接&#x27;]=link</span><br><span class="line">                        else:</span><br><span class="line">                            xiaoshuo.loc[i,&#x27;大小&#x27;] = size.group()</span><br><span class="line">                            evaluate = re.findall(r&#x27;[0-9]+(?=&lt;\/span)&#x27;,a)     </span><br><span class="line">#查找5个评分数据，re.findall返回全部匹配信息</span><br><span class="line">                            if len(evaluate) == 5:                      </span><br><span class="line">#评分数据的个数为5个，不为则加入link_false的DataFrame</span><br><span class="line">                                xiaoshuo.loc[i,&#x27;仙草&#x27;:&#x27;毒草&#x27;] = evaluate</span><br><span class="line">                                print(&quot;爬取成功，地址是&#123;&#125;&quot;.format(link))</span><br><span class="line">                            else:</span><br><span class="line">                                link_false.loc[i,&#x27;错误链接&#x27;]=link</span><br><span class="line">        await browser.close()           #关闭浏览器</span><br><span class="line">asyncio.run(main())</span><br><span class="line">end =time.perf_counter()      #结束时间</span><br><span class="line">print(&#x27;Running time:%s Seconds&#x27;%(end-start))         </span><br><span class="line">#时间等于结束时间减去开始时间</span><br><span class="line">writer = pd.ExcelWriter(&#x27;xiaoshuo.xlsx&#x27;, engine=&#x27;xlsxwriter&#x27;)        </span><br><span class="line">#将两个DataFrame生成一个Excel表格，两个sheet</span><br><span class="line">xiaoshuo.to_excel(writer,sheet_name=&quot;Sheet1&quot;)</span><br><span class="line">link_false.to_excel(writer,sheet_name=&quot;Sheet2&quot;)</span><br><span class="line">writer.save()</span><br></pre></td></tr></table></figure>
+<p>超时错误链接，重新读取并进行爬取</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#读取错误/超时链接</span><br><span class="line">for i in range(len(link_flase)):  #for循环设置为link_flase的长度</span><br><span class="line">    link=link_false</span><br></pre></td></tr></table></figure>
+
+<h1 id="数据清洗"><a href="#数据清洗" class="headerlink" title="数据清洗"></a>数据清洗</h1><p>1.读取Excel文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import pandas as pd</span><br><span class="line">a1=pd.read_excel(&#x27;xiaoshuo9.xlsx&#x27;,sheet_name=&#x27;Sheet1&#x27;)</span><br><span class="line">a2=pd.read_excel(&#x27;xiaoshuo8.xlsx&#x27;,sheet_name=&#x27;Sheet1&#x27;)</span><br><span class="line">a3=pd.read_excel(&#x27;xiaoshuo7.xlsx&#x27;,sheet_name=&#x27;Sheet1&#x27;)</span><br><span class="line">a4=pd.read_excel(&#x27;xiaoshuo6.xlsx&#x27;,sheet_name=&#x27;Sheet1&#x27;)</span><br><span class="line">a5=pd.read_excel(&#x27;xiaoshuo5.xlsx&#x27;,sheet_name=&#x27;Sheet1&#x27;)</span><br><span class="line">a6=pd.read_excel(&#x27;xiaoshuo3.xlsx&#x27;)</span><br><span class="line">a7=pd.read_excel(&#x27;xiaoshuo11.xlsx&#x27;,sheet_name=&#x27;Sheet1&#x27;)</span><br><span class="line">a8=pd.read_excel(&#x27;xiaoshuo12.xlsx&#x27;,sheet_name=&#x27;Sheet1&#x27;)</span><br></pre></td></tr></table></figure>
+<p>2.整合Excel文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df=pd.concat([a1,a2,a3,a4,a5,a6,a7,a8])</span><br></pre></td></tr></table></figure>
+<p>3.查看空值信息：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.isnull().sum() #等待时间不足或者网络故障/网站本身的问题</span><br></pre></td></tr></table></figure>
+<p>4.查看数据信息：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.info()  #查看数据的类型，需要做数据清洗或者是数据类型转换</span><br></pre></td></tr></table></figure>
+<p>TIPS：查看数据类型方便进行数据清洗，例如object型可能掺杂着int型、float型&#x2F;或字符串<br>5.查看空值所在的行：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[df.isnull().any()==True]  #查看任何含有空值所在的行</span><br></pre></td></tr></table></figure>
+<p>6.查看书名重复值所在的行：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df[df.书名.duplicated(keep=False).T].sort_values(&#x27;书名&#x27;)     </span><br><span class="line">#查看书名重复值所在的行,发现有的书传了两次，有的书名相同，存在空值的书均有完整值的重复书名</span><br></pre></td></tr></table></figure>
+<p>7.筛选出书名和作者相同的数据：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">df.dropna(inplace=True)    </span><br><span class="line">#因为前面的重复值中缺失行的数据都有其他已补全的数据，所以直接删除缺失值</span><br><span class="line">df[df.loc[:,[&#x27;书名&#x27;,&#x27;作者&#x27;]].duplicated(keep=False).T].sort_values(&#x27;书名&#x27;)</span><br><span class="line">#书名和作者均相同的数据，keep=False将所有重复数据展示出来</span><br></pre></td></tr></table></figure>
+<p>8.将「大小」列进行转换，因为有些是kb，有些是MB，统一转换为MB，还有一些错误信息，甚至是中文字符，可以通过正则表达式筛选出错误的信息，接着使用at定位数据点，其中’E-3’为10的负3次方<br>TIPS：字符串转数据型E-3，或者是format函数<br><img src="/2022-05-26-playwright-pyecharts%E7%88%AC%E8%99%AB-1/1.png"><br><img src="/2022-05-26-playwright-pyecharts%E7%88%AC%E8%99%AB-1/2.png"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df1[&#x27;大小&#x27;]=df1[&#x27;大小&#x27;].replace(&#123;&#x27; &#x27;:&#x27;&#x27;,&#x27;kb&#x27;:&#x27;E-3&#x27;,&#x27;KB&#x27;:&#x27;E-3&#x27;,&#x27;MB&#x27;:&#x27;&#x27;,&#x27;M&#x27;:&#x27;&#x27;,&#x27;(AN)&#x27;:&#x27;&#x27;,&#x27;&amp;lt;s&amp;gt;&#x27;:&#x27;&#x27;,&#x27;&amp;lt;u&amp;gt;&#x27;:&#x27;&#x27;,&#x27;&amp;lt;em&#x27;:&#x27;&#x27;,&#x27;(&#x27;:&#x27;&#x27;,&#125;,regex=True)</span><br></pre></td></tr></table></figure>
+<p>9.将仙草到毒草的5个评分数据转为整数型，因为投票的人数是整数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df1.loc[:,&#x27;仙草&#x27;:&#x27;毒草&#x27;]=df1.loc[:,&#x27;仙草&#x27;:&#x27;毒草&#x27;].astype(int)</span><br></pre></td></tr></table></figure>
+<p>10.设置新列『评价人数』</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df1[&#x27;评价人数&#x27;]=df1.loc[:,&#x27;仙草&#x27;:&#x27;毒草&#x27;].sum(1)</span><br></pre></td></tr></table></figure>
+<p>11.设置新列「好评度」，仙草记3分，粮草记2分，干草记1分，枯草记-1分，毒草记-2分</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df1[&#x27;好评度&#x27;]=(df1[&#x27;仙草&#x27;]*3+df1[&#x27;粮草&#x27;]*2+df1[&#x27;干草&#x27;]-df1[&#x27;枯草&#x27;]-df1[&#x27;毒草&#x27;])/df1[&#x27;评价人数&#x27;]</span><br></pre></td></tr></table></figure>
+
+<h1 id="可视化（pyecharts）"><a href="#可视化（pyecharts）" class="headerlink" title="可视化（pyecharts）"></a>可视化（pyecharts）</h1><p>1.词云</p>
+<p>获取100组评价人数大于100的书名和好评度的信息</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">import pandas as pd</span><br><span class="line">from pyecharts.charts import WordCloud     #pyecharts内置词云</span><br><span class="line">word=np.array(df1.loc[df1[&#x27;评价人数&#x27;]&gt;100,[&#x27;书名&#x27;,&#x27;好评度&#x27;]].sort_values(by=&#x27;好评度&#x27;,ascending=False).head(100))</span><br><span class="line">#词云需要array格式或者是list格式</span><br><span class="line">wc=(</span><br><span class="line">    WordCloud(init_opts=opts.InitOpts(width=&#x27;1800px&#x27;, height=&#x27;1200px&#x27;))</span><br><span class="line">    .add(&quot;&quot;,word)</span><br><span class="line"></span><br><span class="line">)</span><br><span class="line">wc.render(path=&quot;1.html&quot;)  #路径</span><br></pre></td></tr></table></figure>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Awesome-pyecharts</title>
+            <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+        <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts-wordcloud.min.js"></script>
+
+</head>
+<body>
+    <div id="32a3c7111e92467daa3c6744ccb5461f" class="chart-container" style="width:900px; height:500px;"></div>
+    <script>
+        var chart_32a3c7111e92467daa3c6744ccb5461f = echarts.init(
+            document.getElementById('32a3c7111e92467daa3c6744ccb5461f'), 'white', {renderer: 'canvas'});
+        var option_32a3c7111e92467daa3c6744ccb5461f = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [
+        {
+            "type": "wordCloud",
+            "shape": "circle",
+            "rotationRange": [
+                -90,
+                90
+            ],
+            "rotationStep": 45,
+            "girdSize": 20,
+            "sizeRange": [
+                12,
+                60
+            ],
+            "data": [
+                {
+                    "name": "\u8df3\u5927\u795e",
+                    "value": 2.855769230769231,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(4,132,97)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u56de\u5230\u8fc7\u53bb\u53d8\u6210\u732b",
+                    "value": 2.8360975609756096,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(80,17,18)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u53db\u5f92",
+                    "value": 2.7943067033976123,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(139,18,119)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5168\u7403\u8fdb\u5316",
+                    "value": 2.7865707434052758,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(46,14,141)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u60ca\u609a\u4e50\u56ed",
+                    "value": 2.7862374382558337,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(64,154,68)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6587\u827a\u65f6\u4ee3",
+                    "value": 2.7820577800304105,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(89,156,12)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6781\u9053\u5929\u9b54",
+                    "value": 2.7799622946404523,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(99,100,138)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u8e49\u8dce",
+                    "value": 2.779527559055118,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(8,139,25)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u50b2\u5251\u51cc\u4e91",
+                    "value": 2.775431861804223,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(47,50,128)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u795e\u79d8\u4e4b\u65c5",
+                    "value": 2.768627450980392,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(150,74,140)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5192\u724c\u5927\u82f1\u96c4",
+                    "value": 2.7663934426229506,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(120,107,90)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5546\u6d77\u8c0d\u5f71",
+                    "value": 2.758169934640523,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(53,144,54)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u9ec4\u91d1\u6e14\u573a",
+                    "value": 2.7564599483204133,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(117,50,83)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u900d\u9065\u519b\u533b",
+                    "value": 2.7547169811320753,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(10,141,9)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u906e\u5929",
+                    "value": 2.7512980269989615,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(59,2,22)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u65e0\u9650\u6050\u6016",
+                    "value": 2.7464352138871666,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(20,67,155)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u8d64\u8272\u9ece\u660e",
+                    "value": 2.744115872057936,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(18,29,40)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u91cd\u751f\u4e4b\u8d3c\u884c\u5929\u4e0b",
+                    "value": 2.739524348810872,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(65,46,113)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u665a\u660e",
+                    "value": 2.738816738816739,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(103,112,96)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u68a6\u5e7b\u9999\u6c5f(\u8c03\u6559\u9999\u6c5f)",
+                    "value": 2.727122381477398,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(151,114,2)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u96c5\u9a9a",
+                    "value": 2.725293132328308,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(136,58,64)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u8d29\u7f6a",
+                    "value": 2.721052631578947,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(154,46,148)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u4f59\u7f6a",
+                    "value": 2.7182235834609494,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(49,149,71)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u98d8\u9088\u4e4b\u65c5",
+                    "value": 2.7106017191977076,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(126,5,119)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6211\u5f53\u9634\u9633\u5148\u751f\u7684\u90a3\u51e0\u5e74",
+                    "value": 2.7042801556420235,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(1,143,49)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u82d7\u7586\u86ca\u4e8b",
+                    "value": 2.704,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(12,102,63)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u539f\u59cb\u6218\u8bb0",
+                    "value": 2.7018425460636517,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(119,131,37)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6c49\u9b4f\u6587\u9b41",
+                    "value": 2.697704081632653,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(17,133,137)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6211\u6709\u4e00\u5ea7\u5192\u9669\u5c4b(\u6211\u6709\u4e00\u5ea7\u6050\u6016\u5c4b)",
+                    "value": 2.6975635593220337,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(1,127,152)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u8086\u8650\u97e9\u5a31",
+                    "value": 2.6936997319034854,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(110,107,4)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u65e0\u5bb6",
+                    "value": 2.691860465116279,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(151,2,96)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5927\u9006\u8f6c1906",
+                    "value": 2.685631629701061,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(124,29,153)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u8840\u5f26",
+                    "value": 2.684729064039409,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(75,83,133)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u9b54\u88c5",
+                    "value": 2.6842105263157894,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(134,40,108)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u91cd\u751f\u4e4b\u5fc3\u52a8",
+                    "value": 2.6837029893924784,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(68,20,51)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u72ec\u6e38",
+                    "value": 2.6818181818181817,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(150,43,70)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u4e0a\u54c1\u5bd2\u58eb",
+                    "value": 2.6812585499316004,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(118,74,3)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u4e09\u9014\u5fd7",
+                    "value": 2.6810344827586206,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(17,52,61)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6211\u4e3a\u7ea3\u738b\u4e4b\u50b2\u5578\u5c01\u795e",
+                    "value": 2.6809815950920246,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(94,20,41)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u9f99\u9a91\u6218\u673a",
+                    "value": 2.677248677248677,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(132,63,55)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5929\u884c\u5065",
+                    "value": 2.6682464454976302,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(128,124,75)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5546\u8e2a\u8c0d\u5f71",
+                    "value": 2.664516129032258,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(31,60,138)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6b96\u88c5",
+                    "value": 2.6638655462184873,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(105,52,141)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u661f\u9645\u6d6a\u5b50",
+                    "value": 2.6638655462184873,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(56,84,43)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u7edd\u4ee3\u53cc\u9a84",
+                    "value": 2.662037037037037,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(51,140,109)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6211\u7684\u8001\u5a46\u662f\u516c\u4e3b",
+                    "value": 2.6617842876165114,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(58,16,95)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5386\u53f2\u7684\u5c18\u57c3(\u6b7b\u7075\u6cd5\u5e08\u7684\u4ec6\u4eba)",
+                    "value": 2.66120218579235,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(58,119,160)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5361\u5f92",
+                    "value": 2.6577181208053693,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(149,159,66)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u9f99\u86c7\u6f14\u4e49",
+                    "value": 2.656023222060958,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(7,77,139)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u8bb8\u4ed9\u5fd7",
+                    "value": 2.6557692307692307,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(104,49,95)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6c38\u5386\u56db\u5e74",
+                    "value": 2.652794292508918,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(143,61,160)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u660e\u672b\u8fb9\u519b\u4e00\u5c0f\u5175",
+                    "value": 2.6517241379310343,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(119,26,48)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6b66\u6797\u9ad8\u624b\u5728\u6821\u56ed",
+                    "value": 2.6507936507936507,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(140,73,105)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u4ed9\u846b",
+                    "value": 2.6471544715447153,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(27,158,130)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u4f63\u5175\u5929\u4e0b",
+                    "value": 2.6466666666666665,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(132,122,123)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u738b\u724c",
+                    "value": 2.6463022508038585,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(123,36,90)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u9526\u8863\u591c\u884c",
+                    "value": 2.6444444444444444,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(66,67,72)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u8d85\u795e\u673a\u68b0\u5e08",
+                    "value": 2.6431131592421915,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(4,0,79)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u626c\u5e06\u5ba6\u6d77(\u4ed5\u9014\u98ce\u6d41)",
+                    "value": 2.64,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(102,95,150)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5b85\u5e08",
+                    "value": 2.64,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(105,12,41)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u7f51\u6e38\u4e4b\u6b66\u6797\u9738\u56fe",
+                    "value": 2.639751552795031,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(117,28,8)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6b65\u6b65\u751f\u83b2",
+                    "value": 2.6371134020618556,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(0,36,143)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u4e09\u56fd\u4e4b\u5b85\u884c\u5929\u4e0b",
+                    "value": 2.631868131868132,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(52,132,10)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u661f\u7a7a\u5012\u5f71",
+                    "value": 2.631111111111111,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(67,119,71)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u8700\u5c71",
+                    "value": 2.630718954248366,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(86,23,113)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5347\u90aa",
+                    "value": 2.6294117647058823,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(138,134,61)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u8349\u6e05",
+                    "value": 2.628352490421456,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(90,32,61)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u8d3c\u80c6",
+                    "value": 2.627049180327869,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(150,53,29)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u548c\u7a7a\u59d0\u540c\u5c45\u7684\u65e5\u5b50",
+                    "value": 2.6267281105990783,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(75,64,125)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5341\u5dde\u98ce\u4e91\u5fd7",
+                    "value": 2.626086956521739,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(35,74,33)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6d41\u6c13\u9ad8\u624b",
+                    "value": 2.6258278145695364,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(153,37,98)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u72ec\u95ef\u5929\u6daf",
+                    "value": 2.625,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(11,137,5)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u7c7b\u795e",
+                    "value": 2.625,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(153,55,91)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u9999\u8272\u503e\u57ce",
+                    "value": 2.623456790123457,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(97,128,36)"
+                        }
+                    }
+                },
+                {
+                    "name": "1852\u94c1\u8840\u4e2d\u534e",
+                    "value": 2.6228748068006182,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(106,35,103)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6781\u5177\u6050\u6016",
+                    "value": 2.6228571428571428,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(119,13,38)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u91cd\u751f\u4e4b\u8d85\u7ea7\u6218\u8230",
+                    "value": 2.6223662884927066,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(124,35,60)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5e08\u58eb\u4f20\u8bf4",
+                    "value": 2.621700879765396,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(54,128,52)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u661f\u7ea7\u730e\u4eba",
+                    "value": 2.6206896551724137,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(97,59,46)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u9b3c\u80a1",
+                    "value": 2.6204379562043796,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(137,77,152)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u8c0d\u5f71\u98ce\u4e91(\u6c11\u56fd\u8c0d\u5f71)",
+                    "value": 2.6179861644888547,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(36,156,102)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u731b\u864e\u6559\u5e08",
+                    "value": 2.614864864864865,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(137,74,122)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5510\u9a91",
+                    "value": 2.6145454545454547,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(138,57,127)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u7edd\u9876\u5510\u95e8",
+                    "value": 2.6133333333333333,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(42,13,114)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u9f99\u5370\u6218\u795e(\u76d6\u4e16\u6218\u795e)",
+                    "value": 2.6133333333333333,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(152,67,99)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u9b54\u8fd0\u82cd\u832b",
+                    "value": 2.611940298507463,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(107,16,144)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u8fdb\u51fb\u7684\u5927\u5185\u5bc6\u63a2",
+                    "value": 2.6115702479338845,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(25,116,103)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6700\u7ec8\u8fdb\u5316",
+                    "value": 2.611390284757119,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(48,129,52)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u8d85\u7ea7\u9ab7\u9ac5\u5175",
+                    "value": 2.610738255033557,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(95,72,126)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u8700\u5c71\u5251\u4fa0\u4f20",
+                    "value": 2.6095617529880477,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(46,4,110)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5ba0\u9b45",
+                    "value": 2.6081474296799225,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(111,156,75)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u900d\u9065\u5c0f\u4e66\u751f",
+                    "value": 2.607002360346184,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(105,24,45)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u56de\u5230\u660e\u671d\u5f53\u738b\u7237",
+                    "value": 2.606008583690987,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(14,128,66)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u795e\u6e38",
+                    "value": 2.6052631578947367,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(72,80,56)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u83b2\u82b1\u5b9d\u9274",
+                    "value": 2.6052631578947367,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(76,9,8)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u72e9\u9b54\u624b\u8bb0",
+                    "value": 2.6037364798426745,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(47,127,144)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u9690\u6740",
+                    "value": 2.603319977103606,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(53,148,134)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6d41\u6c13\u9ad8\u624bII",
+                    "value": 2.6030534351145036,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(128,89,89)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u65e0\u5c3d\u6b66\u88c5",
+                    "value": 2.60252935862692,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(152,62,150)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u62e3\u5b9d",
+                    "value": 2.6012269938650308,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(53,134,11)"
+                        }
+                    }
+                }
+            ],
+            "drawOutOfBound": false,
+            "textStyle": {
+                "emphasis": {}
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [],
+            "selected": {}
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    }
+};
+        chart_32a3c7111e92467daa3c6744ccb5461f.setOption(option_32a3c7111e92467daa3c6744ccb5461f);
+    </script>
+</body>
+</html>
+
+<p> 2.分词词云</p>
+<p>将评价人数前1500的书名进行分词，分析出常用书名的关键字</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import jieba.analyse  #使用分词库进行分析，书名的单词的使用评率</span><br><span class="line">from pyecharts.charts import WordCloud     #pyecharts内置词云</span><br><span class="line">text=df1.书名.head(1500).str.cat(sep=&#x27; &#x27;)    </span><br><span class="line">#jieba需要的是字符串，df1是DataFrame，使用df.str.cat进行串接，用空格‘ ’作为连接符号，将df1转##换为字符串</span><br><span class="line">word=jieba.analyse.extract_tags(text, topK=40, withWeight=True, allowPOS=())</span><br><span class="line">#topK返回权重值最高的字符名称和权重值，以列表形式</span><br><span class="line">wc=(</span><br><span class="line">    WordCloud()</span><br><span class="line">    .add(&quot;&quot;,word)</span><br><span class="line">)</span><br><span class="line">wc.render(path=&quot;1.html&quot;)</span><br></pre></td></tr></table></figure>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Awesome-pyecharts</title>
+            <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+        <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts-wordcloud.min.js"></script>
+
+</head>
+<body>
+    <div id="0f4df6f82f6c40c9b4f90da9bb726460" class="chart-container" style="width:900px; height:500px;"></div>
+    <script>
+        var chart_0f4df6f82f6c40c9b4f90da9bb726460 = echarts.init(
+            document.getElementById('0f4df6f82f6c40c9b4f90da9bb726460'), 'white', {renderer: 'canvas'});
+        var option_0f4df6f82f6c40c9b4f90da9bb726460 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [
+        {
+            "type": "wordCloud",
+            "shape": "circle",
+            "rotationRange": [
+                -90,
+                90
+            ],
+            "rotationStep": 45,
+            "girdSize": 20,
+            "sizeRange": [
+                12,
+                60
+            ],
+            "data": [
+                {
+                    "name": "\u91cd\u751f",
+                    "value": 0.14496918710180848,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(56,149,53)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u8bf8\u5929",
+                    "value": 0.08636725838541356,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(2,96,8)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6700\u5f3a",
+                    "value": 0.08081532136337385,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(37,105,152)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u8d85\u7ea7",
+                    "value": 0.06527862351130448,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(141,11,127)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u90fd\u5e02",
+                    "value": 0.06437641290959976,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(111,106,143)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u4e16\u754c",
+                    "value": 0.06215280505999407,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(48,133,17)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u7cfb\u7edf",
+                    "value": 0.060292723630927955,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(8,88,15)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u7a7f\u8d8a",
+                    "value": 0.05619552180049214,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(78,55,156)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u795e\u7ea7",
+                    "value": 0.053163804489623476,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(56,7,46)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u4e07\u754c",
+                    "value": 0.049619550856981914,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(69,132,31)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u65e0\u9650",
+                    "value": 0.04828945523098132,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(49,129,156)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u4fee\u4ed9",
+                    "value": 0.047684363274236585,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(96,0,95)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u7f51\u6e38",
+                    "value": 0.04152117723171064,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(68,2,93)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5168\u80fd",
+                    "value": 0.03961327113965609,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(91,61,84)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u81f3\u5c0a",
+                    "value": 0.03754619904893566,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(94,124,25)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u65e0\u654c",
+                    "value": 0.036833483246830716,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(115,42,71)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u4eba\u751f",
+                    "value": 0.0345138636959917,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(86,118,25)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5f00\u59cb",
+                    "value": 0.03419828438814112,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(87,93,108)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u660e\u661f",
+                    "value": 0.03195236180587015,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(99,11,102)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5de8\u661f",
+                    "value": 0.031926428006463094,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(31,136,82)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u706b\u5f71",
+                    "value": 0.031325302037118294,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(156,28,10)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u79d1\u6280",
+                    "value": 0.031123908829344796,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(124,127,133)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u8fdb\u5316",
+                    "value": 0.02950175556607471,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(86,35,51)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u7edd\u4e16",
+                    "value": 0.029233960289119478,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(124,7,80)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u672b\u4e16",
+                    "value": 0.028966912816098426,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(157,33,101)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u4e4b\u738b",
+                    "value": 0.02866160346866884,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(121,29,88)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6781\u54c1",
+                    "value": 0.02857396316314853,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(26,148,96)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u4f4d\u9762",
+                    "value": 0.028354029061132522,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(89,68,37)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5b66\u9738",
+                    "value": 0.028354029061132522,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(144,38,104)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u82f1\u96c4",
+                    "value": 0.0282131569084791,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(106,42,21)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u4ed9\u754c",
+                    "value": 0.026885806805810854,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(15,156,141)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6b66\u4fa0",
+                    "value": 0.026113977809902163,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(34,8,28)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6597\u7f57",
+                    "value": 0.024809775428490957,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(80,130,140)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5976\u7238",
+                    "value": 0.024809775428490957,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(2,68,20)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6f2b\u5a01",
+                    "value": 0.024809775428490957,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(102,22,91)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u53ec\u5524",
+                    "value": 0.02462218777278091,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(11,86,31)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6e38\u620f",
+                    "value": 0.023444503357877264,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(87,21,116)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u7535\u5f71",
+                    "value": 0.0217126228938571,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(46,12,58)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u9ad8\u624b",
+                    "value": 0.021674244873628814,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(71,122,56)"
+                        }
+                    }
+                },
+                {
+                    "name": "BOSS",
+                    "value": 0.021265521795849392,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(62,112,42)"
+                        }
+                    }
+                }
+            ],
+            "drawOutOfBound": false,
+            "textStyle": {
+                "emphasis": {}
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [],
+            "selected": {}
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    }
+};
+        chart_0f4df6f82f6c40c9b4f90da9bb726460.setOption(option_0f4df6f82f6c40c9b4f90da9bb726460);
+    </script>
+</body>
+</html>
+
+<p>3.饼图<br>将小说大小进行数据分箱</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">from pyecharts.charts import Pie</span><br><span class="line">from pyecharts import options as opts</span><br><span class="line">z1=[&#x27;超小&#x27;,&#x27;小&#x27;,&#x27;中小型&#x27;,&#x27;中型&#x27;,&#x27;中高型&#x27;,&#x27;大型&#x27;,&#x27;超大&#x27;]</span><br><span class="line">z=list(df1.大小.groupby(pd.cut(df1.大小,bins=[0,2,4,6,8,10,15,40])).count())</span><br><span class="line">#将大小这一列使用bins进行界限划分，然后排序统计，最后转为列表形式</span><br><span class="line">pie = (Pie()</span><br><span class="line">       .add(&#x27;&#x27;,[list(i) for i in zip(z1,z)])   #zip是将两组列表一一对应并连接起来的函数</span><br><span class="line">       .set_global_opts(title_opts=opts.TitleOpts(title=&quot;小说大小分布&quot;))</span><br><span class="line">       )</span><br><span class="line">pie.render(&#x27;3.html&#x27;)</span><br></pre></td></tr></table></figure>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Awesome-pyecharts</title>
+            <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+
+</head>
+<body>
+    <div id="476ec2eb816e47b98c1cc6d254fad7de" class="chart-container" style="width:900px; height:500px;"></div>
+    <script>
+        var chart_476ec2eb816e47b98c1cc6d254fad7de = echarts.init(
+            document.getElementById('476ec2eb816e47b98c1cc6d254fad7de'), 'white', {renderer: 'canvas'});
+        var option_476ec2eb816e47b98c1cc6d254fad7de = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [
+        {
+            "type": "pie",
+            "clockwise": true,
+            "data": [
+                {
+                    "name": "\u8d85\u5c0f",
+                    "value": 752
+                },
+                {
+                    "name": "\u5c0f",
+                    "value": 2070
+                },
+                {
+                    "name": "\u4e2d\u5c0f\u578b",
+                    "value": 1702
+                },
+                {
+                    "name": "\u4e2d\u578b",
+                    "value": 948
+                },
+                {
+                    "name": "\u4e2d\u9ad8\u578b",
+                    "value": 523
+                },
+                {
+                    "name": "\u5927\u578b",
+                    "value": 442
+                },
+                {
+                    "name": "\u8d85\u5927",
+                    "value": 134
+                }
+            ],
+            "radius": [
+                "0%",
+                "75%"
+            ],
+            "center": [
+                "50%",
+                "50%"
+            ],
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "\u8d85\u5c0f",
+                "\u5c0f",
+                "\u4e2d\u5c0f\u578b",
+                "\u4e2d\u578b",
+                "\u4e2d\u9ad8\u578b",
+                "\u5927\u578b",
+                "\u8d85\u5927"
+            ],
+            "selected": {},
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    },
+    "title": [
+        {
+            "text": "\u5c0f\u8bf4\u5927\u5c0f\u5206\u5e03",
+            "padding": 5,
+            "itemGap": 10
+        }
+    ]
+};
+        chart_476ec2eb816e47b98c1cc6d254fad7de.setOption(option_476ec2eb816e47b98c1cc6d254fad7de);
+    </script>
+</body>
+</html>
+
+<p>4.一块画布多图</p>
+<p>查看小说类型分布情况</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">df2=df1.assign(类型个数=1).groupby(&#x27;类型&#x27;).sum().sort_values(&#x27;好评度&#x27;,ascending=False).copy()</span><br><span class="line">df2[&#x27;好评度均值&#x27;]=df2[&#x27;好评度&#x27;]/df2[&#x27;类型个数&#x27;]</span><br><span class="line">df2.drop([&#x27;28&quot;&gt;历史·军事&#x27;],inplace=True)   #删掉一组异常值</span><br><span class="line">df2.reset_index(inplace=True)  #重置索引</span><br><span class="line">df2</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">from pyecharts.charts import Page  #顺序多图</span><br><span class="line">bar = (</span><br><span class="line">    Bar(&#123;&#x27;height&#x27;:&#x27;800px&#x27;,&#x27;width&#x27;:&#x27;1800px&#x27;&#125;)  #参数传递的另一种简化方式</span><br><span class="line">       .add_xaxis(list(df2.类型))</span><br><span class="line">       .add_yaxis(&#x27;仙草&#x27;,list(df2.仙草),stack=&#x27;stack1&#x27;)</span><br><span class="line">       .add_yaxis(&#x27;毒草&#x27;,list(df2.毒草),stack=&#x27;stack1&#x27;)</span><br><span class="line">        .set_global_opts(xaxis_opts=opts.AxisOpts(boundary_gap=True),</span><br><span class="line">                         title_opts=opts.TitleOpts(title=&#x27;不同类型仙草/毒草分布&#x27;))</span><br><span class="line">)#boundary_gap解决X轴索引值过长</span><br><span class="line"></span><br><span class="line">pie =(Pie()</span><br><span class="line">      .add(&#x27;好评度均值&#x27;,[list(i) for i in zip(df2.类型,df2.好评度均值)])</span><br><span class="line">)</span><br><span class="line">page=Page()</span><br><span class="line">page.add(bar,pie)</span><br><span class="line">page.render(&quot;5.html&quot;)</span><br></pre></td></tr></table></figure>
+<html>
 <head>
     <meta charset="UTF-8">
     <title>Awesome-pyecharts</title>
@@ -573,7 +2225,11 @@
 </body>
 </html>
 
-<p>还有什么东西</p>
+
+<h1 id="汇报方式"><a href="#汇报方式" class="headerlink" title="汇报方式"></a>汇报方式</h1><p>一般都是适用PPT进行汇报，在Macos端可以使用Keynote做酷炫的PPT动画</p>
+<p>同样的，Win10使用OFFice PPT可以将离线的html文件插入进入PPT<br><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1092319">如何将html格式动态图表网页嵌入ppt中</a></p>
+<p>Mac端必须要使用在线的html文件 ，在开发工具——其他控件列表中选择Microsoft web brower，可以自行购买服务器，将html传入服务器</p>
+<p>个人原始数据：<br><a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1Rd8gtBR5FcmggUEgll9V0A?pwd=y87v">爬虫数据</a></p>
 
     </div>
 
@@ -582,6 +2238,9 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" rel="tag"># 数据分析</a>
+          </div>
 
         
 
@@ -651,7 +2310,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#playwright%E7%88%AC%E8%99%AB"><span class="nav-number">2.</span> <span class="nav-text">playwright爬虫</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97"><span class="nav-number">3.</span> <span class="nav-text">数据清洗</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%AF%E8%A7%86%E5%8C%96%EF%BC%88pyecharts%EF%BC%89"><span class="nav-number">4.</span> <span class="nav-text">可视化（pyecharts）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B1%87%E6%8A%A5%E6%96%B9%E5%BC%8F"><span class="nav-number">5.</span> <span class="nav-text">汇报方式</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -668,6 +2327,10 @@
           <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
       </div>
   </nav>
 </div>
